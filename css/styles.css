@@ -2,33 +2,46 @@
 
 /* applies to screens smaller than 500px (first breakpoint) */
 /* and above unless overwritten below */
+:root {
+  --box-sizing: border-box;
+  --main-bg-color: #6fc2f1d2;
+}
+
+* {
+  box-sizing: var(--box-sizing);
+}
+
+.nav{
+  --
+}
+
 
 body {
-  background: #fcc;
-} 
-
-
+  background: var(--main-bg-color);
+}
 
 /* TABLET STYLES */
 
 @media screen and (min-width: 500px) {
-
   /* applies to screens wider than 499px */
-  
-  body {
-    background: #cfc;
-  } 
+:root {
+  --main-bg-color: #fad88f;
 }
 
-
+  body {
+    background: var(--main-bg-color);
+  }
+}
 
 /* DESKTOP STYLES */
 
 @media screen and (min-width: 1000px) {
-
   /* applies to screens wider than 999px */
+:root {
+  --main-bg-color: #a3f5b1;
+}
 
   body {
-    background: #ccf;
-  } 
+    background: var(--main-bg-color);
+  }
 }
