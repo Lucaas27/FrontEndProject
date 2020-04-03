@@ -1,12 +1,12 @@
 /* MOBILE AND GLOBAL STYLES */
 
-/* applies to screens smaller than 500px (first breakpoint) */
+/* applies to screens smaller than 520px (first breakpoint) */
 /* and above unless overwritten below */
 :root {
   --box-sizing: border-box;
   --main-bg-color: #6fc2f1d2;
-  --gallery-img: 0.5rem;
-
+  --gallery-img-height: 50vh;
+  --gallery-img-width:80vw;
 }
 
 * {
@@ -14,63 +14,81 @@
 }
 
 
-
-.nav{
-  --
-}
-
-
 body {
   background: var(--main-bg-color);
 }
-
-/* TABLET STYLES */
-
-@media screen and (min-width: 500px) {
-  /* applies to screens wider than 499px */
-  :root {
-    --main-bg-color: #fad88f;
-  }
-
-  body {
-    background: var(--main-bg-color);
-  }
-}
-
-/* DESKTOP STYLES */
-
-@media screen and (min-width: 1000px) {
-  /* applies to screens wider than 999px */
-  :root {
-    --main-bg-color: #fff;
-    --gallery-img: 30%;
-  }
-
-  body {
-    background: var(--main-bg-color);
-  }
 
   .container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: center;
   }
 
-  .container .box .img-size{
-    height: auto;
-    width: 30vw;
+  .box .img-size{
+    height: var(--gallery-img-height);
+    width: var(--gallery-img-width);
     margin: 0;
   }
 
-  .container .box{
-    height: 30vh;
-    width: 30vw;
+  .container .box{    
+    height: var(--gallery-img-height);
+    width: var(--gallery-img-width);
     margin: 0.2rem;
     overflow: hidden;
-
+    object-fit: cover;
   }
 
-}
 
+/* TABLET STYLES */
+
+@media screen and (min-width: 520px) {
+  /* applies to screens wider than 5px */
+  :root {
+    --main-bg-color: #fad88f;
+    --gallery-img-height: 50vh;
+    --gallery-img-width:45vw;
+  }
+
+
+  body {
+    background: var(--main-bg-color);
+  }
+  .container{
+    justify-content: flex-start;
+  }
+  .container .box .img-size{
+    height: var(--gallery-img-height);
+    width: var(--gallery-img-width);
+  }
+
+  .container .box{
+    height: var(--gallery-img-height);
+    width: var(--gallery-img-width);
+  }
+
+/* DESKTOP STYLES */
+
+@media screen and (min-width: 1025px) {
+  /* applies to screens wider than 1024px */
+  :root {
+    --main-bg-color: #fff;
+    --gallery-img-height: 30vh;
+    --gallery-img-width:25vw;
+  }
+
+  body {
+    background: var(--main-bg-color);
+  }
+
+  .box .img-size{
+    height: var(--gallery-img-height);
+    width: var(--gallery-img-width);
+  }
+
+  .container .box{
+    height: var(--gallery-img-height);
+    width: var(--gallery-img-width);
+  }
+}
