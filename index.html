@@ -12,93 +12,92 @@
     <link rel="stylesheet" href="css/fontawesome.min.css" />
   </head>
   <body>
-    <main>
+    <div class="layout">
       <header>
-        <nav class="nav-bar">
+        <nav class="navbar">
           <div class="logo">
-            <h1><a href="#welcome">Loba LoPs</a></h1>
+            <a href="#welcome">Loba LoPs</a>
           </div>
           <div>
-            <ul class="nav-sections">
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <a href="#gallery">Gallery</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
-            </ul>
+            <a href="#gallery">Gallery</a>
+          </div>
+          <div>
+            <a href="#about">About</a>
+          </div>
+          <div>
+            <a href="#contact">Contact</a>
           </div>
         </nav>
       </header>
 
-      <section id="welcome">
-        <div class="welcome-text">
-          <h1>
-            <span>Photography</span>
-            <span>& Video</span>
-          </h1>
-          <h3>
-            Lorem ipsum dolor sit amet.
-          </h3>
-          <div>
-            <a href="#gallery" class="button">Check my work!</a>
+      <main class="grid">
+        <section id="welcome">
+          <div class="welcome-text">
+            <h1>
+              <span>Photography</span>
+              <span>& Video</span>
+            </h1>
+            <h3>
+              Lorem ipsum dolor sit amet.
+            </h3>
+            <div>
+              <a href="#gallery" class="button">Check my work!</a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section id="gallery" class="grid">
-        <h3>Some of my Projects</h3>
-      </section>
+        <section id="gallery">
+          <h3>Some of my Projects</h3>
+        </section>
 
-      <section id="contact" class="grid">
-        <h3>Get in Touch</h3>
-        <p class="info">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perspiciatis
-          quis porro laudantium, harum hic eaque, magnam vero expedita fugiat,
-          doloremque corporis incidunt sequi ratione sint voluptatem asperiores
-          atque maiores autem.
-        </p>
-        <form>
-          <input type="text" placeholder="Name" />
-          <input type="email" placeholder="Email" />
-          <textarea placeholder="Your message" cols="30" rows="10"></textarea>
-          <button class="button">Send Message</button>
-        </form>
-      </section>
-
-      <section id="about" class="grid">
-        <div class="about-text">
-          <h3>About me</h3>
+        <section id="contact">
+          <h3>Get in Touch</h3>
           <p class="info">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit
-            dignissimos animi pariatur odio quo, neque sint totam soluta, et
-            cum, nulla incidunt itaque. Vitae quos, nemo consequuntur itaque et
-            quam.
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Perspiciatis quis porro laudantium, harum hic eaque, magnam vero
+            expedita fugiat, doloremque corporis incidunt sequi ratione sint
+            voluptatem asperiores atque maiores autem.
           </p>
-          <a href="#contact" class="button">Contact me!</a>
-        </div>
-        <div class="about-image">
-          <img src="#" alt="Photographer picture" />
-        </div>
-      </section>
-    </main>
+          <form>
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <textarea placeholder="Your message" cols="30" rows="10"></textarea>
+            <button class="button">Send Message</button>
+          </form>
+        </section>
 
-    <footer>
-      <div class="grid">
-        <p class="copyright">Copyright &copy; 2020, Loba LoPs</p>
-        <ul class="social">
-          <li>
-            <a href=""><i class="fab fa-facebook"></i></a>
-          </li>
-          <li>
-            <a href=""><i class="fab fa-instagram"></i></a>
-          </li>
-        </ul>
-      </div>
-    </footer>
+        <section id="about">
+          <div class="about-text">
+            <h3>About me</h3>
+            <p class="info">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit
+              dignissimos animi pariatur odio quo, neque sint totam soluta, et
+              cum, nulla incidunt itaque. Vitae quos, nemo consequuntur itaque
+              et quam.
+            </p>
+            <a href="#contact" class="button">Contact me!</a>
+          </div>
+          <div class="about-image">
+            <img src="#" alt="Photographer picture" />
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="grid">
+          <p class="copyright">Copyright &copy; 2020, Loba LoPs</p>
+          <ul class="social">
+            <li>
+              <a href=""><i class="fab fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-instagram"></i></a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
     <script src="js/scripts.js"></script>
   </body>
 </html>
