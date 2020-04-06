@@ -75,21 +75,25 @@ textarea {
   grid-template-rows: 0.05fr 1fr auto;
 }
 
-/* Navbar with flexible columns*/
-.navbar {
+/* Navbar*/
+nav {
   background: var(--second-color);
   width: 100%;
   height: 100%;
+}
+
+nav .navbar-links {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
   place-items: center;
+  width: 100%;
+  height: 100%;
 }
-
 /* Brand name */
-.navbar div:nth-of-type(1) {
+nav ul li:nth-of-type(1) {
   justify-self: start;
-  margin-left: 1rem;
-  font-size: 2rem;
+  margin-left: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   font-family: "IM Fell French Canon SC", serif;
 }
