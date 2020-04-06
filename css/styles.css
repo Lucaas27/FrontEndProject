@@ -10,6 +10,9 @@
   --third-color: #d56c2c;
 }
 
+/* Google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto+Slab&display=swap");
+
 /* CSS Reset */
 * {
   margin: 0;
@@ -17,6 +20,7 @@
   box-sizing: border-box;
   list-style: none;
   text-decoration: none;
+  font-family: "Roboto Slab", sans-serif;
 }
 
 /* base styles */
@@ -70,7 +74,7 @@ textarea {
   grid-template-rows: 0.04fr 1fr auto;
 }
 
-/* Navbar with flexibles columns*/
+/* Navbar with flexible columns*/
 .navbar {
   background: var(--second-color);
   width: 100%;
@@ -114,10 +118,12 @@ textarea {
 
 .welcome-text h1 span:nth-child(1) {
   color: var(--third-color);
+  font-family: "Fredoka One", cursive;
 }
 
 .welcome-text h1 span:nth-child(2) {
   color: var(--main-color);
+  font-family: "Fredoka One", cursive;
 }
 
 .welcome-text h3 {
@@ -153,6 +159,11 @@ textarea {
 
 @media screen and (min-width: 500px) {
   /* applies to screens wider than 499px */
+
+  /* Navbar */
+  .navbar {
+    font-size: 1.2rem;
+  }
 
   /* Welcome section */
 
