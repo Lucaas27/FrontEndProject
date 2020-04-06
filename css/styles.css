@@ -3,18 +3,18 @@
 /* applies to screens smaller than 499px (first breakpoint) */
 /* and above unless overwritten below */
 
-/* CSS VARIABLES */
+/* ============== CSS VARIABLES ======== */
 :root {
   --main-color: #fff;
   --second-color: #22223a;
   --third-color: #d56c2c;
 }
-
-/* Google fonts */
+/* ===================================== */
+/* ============ Google fonts =========== */
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto+Slab&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=IM+Fell+French+Canon+SC&display=swap");
+/* ===================================== */
 
-/* CSS Reset */
+/* ============== CSS Reset ============ */
 * {
   margin: 0;
   padding: 0;
@@ -22,8 +22,9 @@
   list-style: none;
   text-decoration: none;
 }
+/* ===================================== */
 
-/* base styles */
+/* ============ Base styles ============ */
 html,
 body {
   background: var(--main-color);
@@ -39,10 +40,6 @@ footer {
 
 a {
   color: var(--main-color);
-}
-
-a:hover {
-  color: var(--third-color);
 }
 
 .button {
@@ -68,37 +65,49 @@ textarea {
   border: 0.2rem var(--second-color) solid;
   color: #f2f2f2;
 }
-/* Website grid layout */
+
+/* ===================================== */
+
+/*=========== Website grid layout ====== */
 .layout {
   min-height: 100%;
   display: grid;
   grid-template-rows: 0.05fr 1fr auto;
 }
+/* ===================================== */
 
-/* Navbar*/
+/*================= Navbar ===============*/
 nav {
   background: var(--second-color);
   width: 100%;
   height: 100%;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  align-items: center;
 }
 
 nav .navbar-links {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
-  place-items: center;
-  width: 100%;
-  height: 100%;
-}
-/* Brand name */
-nav ul li:nth-of-type(1) {
-  justify-self: start;
-  margin-left: 2rem;
-  font-size: 1.5rem;
-  font-weight: 700;
-  font-family: "IM Fell French Canon SC", serif;
+  display: none;
 }
 
-/* Welcome section */
+nav #toggle-button {
+  display: grid;
+  color: white;
+  justify-self: end;
+  align-self: center;
+  margin: 0 1rem;
+  font-size: 1.5rem;
+}
+
+.brand-name {
+  margin: 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "Fredoka One", cursive;
+}
+/* =================================== */
+
+/* ========== Welcome section ========= */
 #welcome {
   width: 100%;
   height: 100vh;
@@ -162,16 +171,14 @@ nav ul li:nth-of-type(1) {
     background-image: url(../img/slider/img4.jpg);
   }
 }
+/* ===================================== */
 
-/* TABLET STYLES */
+/* ========== TABLET STYLES ============= */
 
 @media screen and (min-width: 500px) {
   /* applies to screens wider than 499px */
 
   /* Navbar */
-  .navbar {
-    font-size: 1.2rem;
-  }
 
   /* Welcome section */
 
@@ -186,10 +193,29 @@ nav ul li:nth-of-type(1) {
   }
 }
 
-/* DESKTOP STYLES */
+/* ========== DESKTOP STYLES ============ */
 
 @media screen and (min-width: 1000px) {
   /* applies to screens wider than 999px */
+
+  /* ============= Navbar ============== */
+
+  nav .navbar-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33%);
+    align-items: center;
+    justify-items: center;
+  }
+
+  nav #toggle-button {
+    display: none;
+  }
+
+  nav ul li {
+    margin: 0 1rem;
+  }
+  /* =================================== */
+  /* Welcome section */
 
   .welcome-text h1 {
     font-size: 13vmin;
