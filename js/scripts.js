@@ -43,23 +43,28 @@ changeImage = () => {
 };
 
 // Function listen for clicks on the next button and changes pictures depending on the index
-forward.addEventListener("click", () => {
-  if (index == galleryPics.length) {
-    index = 0;
-  } else {
-    index++;
-  }
-  changeImage();
-});
+forward.addEventListener(
+  "click",
+  (next = () => {
+    if (index == galleryPics.length) {
+      index = 0;
+    } else {
+      index++;
+    }
+    changeImage();
+  })
+);
 
 // Function listen for clicks on the next button and changes pictures depending on the index
-backwards.addEventListener("click", () => {
-  if (index == 0) {
-    index = galleryPics.length - 1;
-  } else {
-    index--;
-  }
-  changeImage();
-});
-
+backwards.addEventListener(
+  "click",
+  (prev = () => {
+    if (index == 0) {
+      index = galleryPics.length - 1;
+    } else {
+      index--;
+    }
+    changeImage();
+  })
+);
 // -----------------------------------------------------------//
