@@ -11,6 +11,7 @@ toggleButton.addEventListener("click", () => {
 const lightBoxContainer = document.querySelector(".lightbox");
 const lightboxImage = document.querySelector(".lightbox-img");
 const galleryPics = document.querySelectorAll(".img-container");
+const counter = document.querySelector(".lightbox-counter");
 const forward = document.querySelector(".next");
 const backwards = document.querySelector(".prev");
 let index;
@@ -38,9 +39,10 @@ lightBox = () => {
 changeImage = () => {
   imgSrc = galleryPics[index].querySelector("img").getAttribute("src");
   lightboxImage.src = imgSrc;
+  counter.innerHTML = `${index + 1} of ${galleryPics.length}`;
 };
 
-// Function listen for clicks on the next button
+// Function listen for clicks on the next button and changes pictures depending on the index
 forward.addEventListener("click", () => {
   if (index == galleryPics.length) {
     index = 0;
@@ -50,8 +52,7 @@ forward.addEventListener("click", () => {
   changeImage();
 });
 
-// Function listen for clicks on the next button
-
+// Function listen for clicks on the next button and changes pictures depending on the index
 backwards.addEventListener("click", () => {
   if (index == 0) {
     index = galleryPics.length - 1;
@@ -60,4 +61,5 @@ backwards.addEventListener("click", () => {
   }
   changeImage();
 });
+
 // -----------------------------------------------------------//
