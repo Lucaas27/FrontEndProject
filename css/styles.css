@@ -26,32 +26,37 @@
 /* ===================================== */
 
 /* ============ Base styles ============ */
-html,
-body {
-  background: var(--main-color);
+html {
   height: 100%;
-  width: 100%;
+}
+body {
+  background: var(--second-color);;
+  height: 100vh;
   font-family: "Roboto Slab", sans-serif;
+  color: var(--main-color);
 }
 
-a,
-h3 {
+a{
   color: var(--main-color);
 }
 
 .button {
   background: none;
-  border: 0.2rem solid var(--second-color);
-  color: var(--second-color);
+  border: 0.1rem solid var(--second-color);
+  color: var(--main-color);
   padding: 0.7vh 1.3vw;
   border-radius: 1em;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.6);
   display: inline-block;
+  border: .1rem var(--main-color) solid;
+
 }
 
 .button:hover {
   color: var(--main-color);
-  background: var(--second-color);
+  background: var(--third-color);
+  border: .1rem var(--main-color) solid;
+
 }
 
 input,
@@ -69,15 +74,17 @@ textarea {
 .layout {
   min-height: 100%;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr min-content;
 }
 
 /* ===================================== */
 
-/*================= Navbar ===============*/
+/*================= NAVBAR ===============*/
 header {
   position: fixed;
   width: 100%;
+  z-index: 1001;
+
 }
 
 nav {
@@ -96,7 +103,7 @@ nav ul.navbar-links {
   grid-column: 1 / span 2;
 }
 
-.navbar-links li a:hover {
+nav ul.navbar-links li a:hover {
   color: var(--third-color);
 }
 
@@ -139,9 +146,8 @@ div.brand-name a:hover {
 
 /* =================================== */
 
-/* ========== Welcome section ========= */
+/* ========== WELCOME SECTION ========= */
 #welcome {
-  width: 100%;
   height: 100vh;
   animation: animate 16s ease-in-out infinite;
   background-size: cover;
@@ -182,6 +188,13 @@ div.brand-name a:hover {
   font-style: italic;
 }
 
+.welcome-text .button{
+  border: 0.1rem var(--second-color) solid;
+}
+.welcome-text .button:hover {
+  background-color: var(--second-color);
+}
+
 .welcome-text div .button {
   padding: 2vh 4vw;
   font-size: 5vmin;
@@ -206,40 +219,194 @@ div.brand-name a:hover {
 }
 /* ===================================== */
 /* ============ GALLERY SECTION ============ */
-#gallery {
-  width: 100%;
+
+
+#gallery .container{
   display: flex;
-  flex-direction: column;
-  place-content: center;
-  place-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  min-width: 100%;
 }
 
-#gallery h3 {
-  background: var(--second-color);
-  padding: 2rem;
-  border-radius: 2rem;
-  margin-top: 4rem;
-  width: 90%;
-  height: 100%;
-  text-align: center;
+.container h3{
+  background-color: #eee;
   font-size: 2rem;
+  font-weight: 600;
+  color: var(--second-color);
+  min-width: 100%;
+  text-align: center;
+  margin: 2rem;
+  padding: 2rem;
+  border-radius: 1rem;
 }
 
-#gallery ul.gallery-pics {
-  background-color: var(--second-color);
+ .container .gallery-pics{
   display: grid;
-  width: 80%;
-  height: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-  margin: 1.3rem;
-  border: 0.3rem var(--third-color) solid;
+  place-items: center;
+  place-content: center;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* grid-auto-rows: minmax(250px, auto); */
+  
 }
 
-#gallery ul.gallery-pics img {
-  width: 100%;
-  padding: 0.5rem;
-  display: block;
+.container .gallery-pics .img-container{
+  position: relative;
+  margin: 1rem;
 }
+
+.container .gallery-pics .img-container img{
+width: 100%;
+display: block;
+}
+
+.container .gallery-pics .img-container .overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.88);
+  opacity: 0;
+  transition: all .5s ease;
+}
+
+.container .gallery-pics .img-container:hover .overlay{
+  transform: scale(0.9);
+  opacity: 1;
+
+}
+
+.container .gallery-pics .img-container .overlay .fas.fa-search-plus{
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #000;
+  background-color: #fff;
+  cursor: pointer;
+}
+/*------------------ lightbox ----------------*/
+.lightbox {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.lightbox.open{
+  display: flex;
+}
+
+.lightbox .lightbox-content{
+  position: relative;
+}
+
+.lightbox .lightbox-close{
+position: absolute;
+z-index: 101;
+right: 0;
+height: 20px;
+width: 20px;
+top: 0;
+text-align: center;
+line-height: 20px;
+color: #fff;
+font-size: 1rem;
+cursor: zoom-out;
+
+}
+
+.lightbox .lightbox-img{
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 530px;
+  padding: 20px 0;
+  cursor: pointer;
+  animation: lightboxImg .5s ease;
+}
+
+@keyframes lightboxImg{
+  0%{
+    transform:scale(0)
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+.lightbox .lightbox-caption{
+  color: #fff;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  
+}
+.lightbox .lightbox-controls div{
+  position: absolute;
+  top:50%;
+  width: 35px;
+  line-height:40px ;
+  margin-top: -30px;
+  background-color: #ccc;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+.lightbox .lightbox-controls div:hover{
+  background-color: #fff;
+}
+.lightbox .lightbox-controls div.prev{
+  left: 20px;
+}
+
+.lightbox .lightbox-controls div.next{
+  right: 20px;
+}
+
+#lightBox.active{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: lightboxImage 0.5s ease;
+}
+
+@keyframes lightboxImage{
+  0%{
+    transform: scale: (0);
+  }
+  100%{
+    transform: scale: (1);
+  }
+}
+.lightbox .lightbox-content {
+  position: relative;
+  margin: 0 0.5rem;
+}
+/*------------------- end of lightbox-------------------------- */
+
 
 /* ================ Footer =============== */
 .footer {
@@ -249,6 +416,8 @@ div.brand-name a:hover {
   justify-content: space-evenly;
   align-content: center;
   padding: 1rem;
+  border-top: .1rem var(--third-color) solid;
+
 }
 /* ======================================= */
 
