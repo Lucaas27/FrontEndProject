@@ -3,15 +3,16 @@
 /* applies to screens smaller than 499px (first breakpoint) */
 /* and above unless overwritten below */
 
+/* ============ Google fonts =========== */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto+Slab&display=swap");
+/* ===================================== */
+
 /* ============== CSS VARIABLES ======== */
 :root {
   --main-color: #fff;
   --second-color: #22223a;
   --third-color: #d56c2c;
 }
-/* ===================================== */
-/* ============ Google fonts =========== */
-@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto+Slab&display=swap");
 /* ===================================== */
 
 /* ============== CSS Reset ============ */
@@ -33,12 +34,8 @@ body {
   font-family: "Roboto Slab", sans-serif;
 }
 
-footer {
-  background: var(--second-color);
-  color: var(--main-color);
-}
-
-a {
+a,
+h3 {
   color: var(--main-color);
 }
 
@@ -68,18 +65,23 @@ textarea {
 
 /* ===================================== */
 
-/*=========== Website grid layout ====== */
+/*=========== Website flex layout ====== */
 .layout {
   min-height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
+
 /* ===================================== */
 
 /*================= Navbar ===============*/
+header {
+  position: fixed;
+  width: 100%;
+}
+
 nav {
   background: var(--second-color);
-  width: 100%;
   height: 100%;
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -147,19 +149,19 @@ div.brand-name a:hover {
 
 .welcome-text {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  text-align: center;
-  justify-content: center;
+  place-content: center;
   align-items: center;
-  font-style: italic;
 }
 
 .welcome-text h1 {
-  font-size: 16vmin;
+  font-style: italic;
+  text-align: center;
+  font-size: 14vmin;
   color: var(--main-color);
 }
 
@@ -177,6 +179,7 @@ div.brand-name a:hover {
   font-size: 4.5vmin;
   color: var(--main-color);
   flex-basis: 13%;
+  font-style: italic;
 }
 
 .welcome-text div .button {
@@ -205,14 +208,51 @@ div.brand-name a:hover {
 /* ============ GALLERY SECTION ============ */
 #gallery {
   width: 100%;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  place-items: center;
+}
+
+#gallery h3 {
+  background: var(--second-color);
+  padding: 2rem;
+  border-radius: 2rem;
+  margin-top: 4rem;
+  width: 90%;
+  height: 100%;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#gallery ul.gallery-pics {
+  background-color: var(--second-color);
   display: grid;
+  width: 80%;
+  height: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  margin: 1.3rem;
+  border: 0.3rem var(--third-color) solid;
 }
 
-gallery-pics {
+#gallery ul.gallery-pics img {
+  width: 100%;
+  padding: 0.5rem;
+  display: block;
 }
 
-/* ========== TABLET STYLES ============= */
+/* ================ Footer =============== */
+.footer {
+  background: var(--second-color);
+  color: var(--main-color);
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  padding: 1rem;
+}
+/* ======================================= */
+
+/* ------------ TABLET STYLES ---------------*/
 
 @media screen and (min-width: 500px) {
   /* applies to screens wider than 499px */
@@ -232,7 +272,7 @@ gallery-pics {
   }
 }
 
-/* ========== DESKTOP STYLES ============ */
+/* ------------ DESKTOP STYLES ------------- */
 
 @media screen and (min-width: 1000px) {
   /* applies to screens wider than 999px */
@@ -243,6 +283,7 @@ gallery-pics {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
     grid-template-rows: 1fr;
+    padding: 10px;
   }
 
   nav ul.navbar-links {
