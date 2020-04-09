@@ -12,6 +12,7 @@
   --main-color: #fff;
   --second-color: #22223a;
   --third-color: #d56c2c;
+  --fourth-color:#ccc
 }
 /* ===================================== */
 
@@ -74,7 +75,7 @@ textarea {
 .layout {
   min-height: 100%;
   display: grid;
-  grid-template-rows: auto 1fr min-content;
+  grid-template-rows: auto 1fr auto;
 }
 
 /* ===================================== */
@@ -84,18 +85,19 @@ header {
   position: fixed;
   width: 100%;
   z-index: 1001;
-
 }
 
-nav {
+.navbar {
   background: var(--second-color);
   height: 100%;
+  width: 100%;
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   align-items: center;
+  
 }
 
-nav ul.navbar-links {
+.navbar .navbar-links {
   display: none;
   align-items: center;
   justify-items: center;
@@ -103,11 +105,17 @@ nav ul.navbar-links {
   grid-column: 1 / span 2;
 }
 
-nav ul.navbar-links li a:hover {
-  color: var(--third-color);
+.navbar .navbar-links a{
+  width: 100%;
+  text-align: center;
 }
 
-nav div#toggle-button {
+.navbar .navbar-links a:hover {
+  color: var(--third-color);
+  background-color: ;
+}
+
+.navbar div#toggle-button {
   display: grid;
   justify-items: end;
   align-items: center;
@@ -121,7 +129,7 @@ i.fas.fa-bars {
   font-size: 1.5rem;
 }
 
-div.brand-name {
+.navbar .brand-name {
   display: grid;
   align-items: center;
   padding-left: 1rem;
@@ -132,15 +140,16 @@ div.brand-name {
   font-family: "Fredoka One", cursive;
 }
 
-div.brand-name a:hover {
+.navbar .brand-name a:hover {
   color: var(--third-color);
+  
 }
 
-.navbar-links.active {
+.navbar .navbar-links.active {
   display: grid;
 }
-.navbar-links.active li a {
-  display: grid;
+
+.navbar .navbar-links.active a {
   padding: 2rem;
 }
 
@@ -231,16 +240,16 @@ div.brand-name a:hover {
   min-width: 100%;
 }
 
-.container h3{
-  background-color: #eee;
+#gallery .container h3{
+  background-color: var(--fourth-color);
   font-size: 2rem;
   font-weight: 600;
   color: var(--second-color);
-  min-width: 100%;
+  min-width: 80%;
   text-align: center;
   margin: 2rem;
   padding: 2rem;
-  border-radius: 1rem;
+  border-radius: 3rem;
 }
 
  .container .gallery-pics{
@@ -309,10 +318,12 @@ display: block;
   display: none;
   justify-content: center;
   align-items: center;
+  cursor: zoom-out;
 }
 .lightbox.open{
   display: flex;
 }
+
 
 .lightbox .lightbox-content{
   position: relative;
@@ -421,7 +432,7 @@ cursor: zoom-out;
 }
 /* ======================================= */
 
-/* ------------ TABLET STYLES ---------------*/
+/* ---------------------TABLET STYLES ---------------*/
 
 @media screen and (min-width: 500px) {
   /* applies to screens wider than 499px */
@@ -448,28 +459,30 @@ cursor: zoom-out;
 
   /* ============= Navbar ============== */
 
-  nav {
+  .navbar {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    grid-template-rows: 1fr;
-    padding: 10px;
+    padding: 12px;
   }
 
-  nav ul.navbar-links {
+  .navbar .navbar-links {
     display: grid;
     grid-column: 2;
     grid-row: 1;
-    grid-template-columns: repeat(auto-fit, 33.3%);
+    grid-template-columns: repeat(auto-fit, 25%);
   }
 
-  nav ul.navbar-links li:hover {
+  .navbar .navbar-links a:hover {
     color: var(--third-color);
-    border: 0;
   }
 
-  nav div#toggle-button {
+  .navbar div#toggle-button {
     display: none;
   }
+  
+  .navbar .navbar-links.active a {
+  padding: 0;
+}
 
   /* =================================== */
   /* Welcome section */

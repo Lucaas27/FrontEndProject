@@ -1,13 +1,29 @@
-// Responsive Nav Bar
-const toggleButton = document.getElementById("toggle-button");
-const navbarLinks = document.querySelector("nav ul.navbar-links");
+// ------------------ Responsive Nav Bar -------------------------
+const navbarLinks = document.querySelector(".navbar .navbar-links");
+const toggleButton = document.querySelector(".fas.fa-bars");
+const navBarContainer = document.querySelector(".navbar");
 
-// listens fot clicks on the hamburguer menu and adds a class called active to it
-toggleButton.addEventListener("click", () => {
+// Open and closes menu nav
+menu = () => {
   navbarLinks.classList.toggle("active");
+};
+
+// listens fot clicks on the hamburguer menu and calls the menu function
+toggleButton.addEventListener("click", () => {
+  menu();
 });
 
-// ------------------Lightbox---------------//
+// Closes menu if the menu or navlinks are clicled
+navBarContainer.addEventListener("click", event => {
+  //   console.log(event.target);
+  if (event.target !== navbarLinks && event.target !== toggleButton) {
+    menu();
+  }
+});
+
+// -----------------------------------------------------------
+
+// ------------------Lightbox---------------
 const lightBoxContainer = document.querySelector(".lightbox");
 const lightboxImage = document.querySelector(".lightbox-img");
 const galleryPics = document.querySelectorAll(".img-container");
@@ -17,7 +33,7 @@ const backwards = document.querySelector(".prev");
 let index;
 let imgSrc;
 
-/* function iterates over img containers and retieves the icon from each
+/* for loop iterates over img containers and retieves the icon from each
 and listens for a click and returns the index number
 */
 for (let i = 0; i < galleryPics.length; i++) {
@@ -32,7 +48,7 @@ for (let i = 0; i < galleryPics.length; i++) {
 
 // Function adds a classe called open to the lighbox container
 lightBox = () => {
-  lightBoxContainer.classList.add("open");
+  lightBoxContainer.classList.toggle("open");
 };
 
 // function uses the index to retrieve the img src attribute
@@ -46,7 +62,7 @@ changeImage = () => {
 forward.addEventListener(
   "click",
   (next = () => {
-    if (index == galleryPics.length) {
+    if (index == galleryPics.length - 1) {
       index = 0;
     } else {
       index++;
@@ -55,7 +71,7 @@ forward.addEventListener(
   })
 );
 
-// Function listen for clicks on the next button and changes pictures depending on the index
+// Function listen for clicks on the prev button and changes pictures depending on the index
 backwards.addEventListener(
   "click",
   (prev = () => {
@@ -67,4 +83,15 @@ backwards.addEventListener(
     changeImage();
   })
 );
-// -----------------------------------------------------------//
+
+lightBoxContainer.addEventListener("click", event => {
+  //   console.log(event.target);
+  if (
+    event.target !== lightboxImage &&
+    event.target !== forward &&
+    event.target !== backwards
+  ) {
+    // if you click anywhere other than the picture and control buttons
+    lightBox();
+  }
+});
