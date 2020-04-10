@@ -254,10 +254,10 @@ i.fas.fa-bars {
 
 #gallery .container .gallery-pics {
   display: grid;
-  width: 100%;
+  width: 75%;
   place-items: center;
   place-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
 
 #gallery .container .gallery-pics .img-container {
@@ -459,11 +459,6 @@ i.fas.fa-bars {
   .welcome-text div .button {
     padding: 1rem 1.5rem;
     font-size: 2vw;
-  }
-  /* ================== Gallery ============== */
-  #gallery .container .gallery-pics {
-    width: 75%;
-    grid-template-columns: repeat(auto-fit, minmax(33.3%, 1fr));
   }
 }
 
