@@ -113,9 +113,11 @@ for (let i = 0; i < buttons.length; i++) {
 
       if (pics[m].getAttribute("data-id") == target) {
         pics[m].style.display = "block";
+        pics[m].style.transform = "scale(0.8)";
       }
       if (target == "all") {
         pics[m].style.display = "block";
+        pics[m].style.transform = "scale(1)";
       }
     }
   });

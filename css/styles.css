@@ -363,6 +363,8 @@ i.fas.fa-bars {
   padding: 15px 0;
   cursor: pointer;
   animation: lightboxImg 0.5s ease;
+  transition: all 1s ease;
+  transform: scale(1);
 }
 
 @keyframes lightboxImg {
