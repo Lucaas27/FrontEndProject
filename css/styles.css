@@ -12,12 +12,14 @@
   --main-color: #fff;
   --second-color: #22223a;
   --third-color: #d56c2c;
-  --fourth-color:#ccc
+  --fourth-color: #ccc;
 }
 /* ===================================== */
 
 /* ============== CSS Reset ============ */
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -31,13 +33,14 @@ html {
   height: 100%;
 }
 body {
-  background: var(--second-color);;
+  background: var(--second-color);
   height: 100vh;
+  overflow-x: hidden;
   font-family: "Roboto Slab", sans-serif;
   color: var(--main-color);
 }
 
-a{
+a {
   color: var(--main-color);
 }
 
@@ -45,19 +48,18 @@ a{
   background: none;
   border: 0.1rem solid var(--second-color);
   color: var(--main-color);
-  padding: 0.7vh 1.3vw;
+  padding: 0.3rem 0.6rem;
   border-radius: 1em;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.6);
   display: inline-block;
-  border: .1rem var(--main-color) solid;
-
+  border: 0.1rem var(--main-color) solid;
+  cursor: pointer;
 }
 
 .button:hover {
   color: var(--main-color);
   background: var(--third-color);
-  border: .1rem var(--main-color) solid;
-
+  border: 0.1rem var(--main-color) solid;
 }
 
 input,
@@ -89,12 +91,10 @@ header {
 
 .navbar {
   background: var(--second-color);
-  height: 100%;
   width: 100%;
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   align-items: center;
-  
 }
 
 .navbar .navbar-links {
@@ -103,16 +103,16 @@ header {
   justify-items: center;
   grid-row: 2;
   grid-column: 1 / span 2;
+  position: relative;
 }
 
-.navbar .navbar-links a{
+.navbar .navbar-links a {
   width: 100%;
   text-align: center;
 }
 
 .navbar .navbar-links a:hover {
   color: var(--third-color);
-  background-color: ;
 }
 
 .navbar div#toggle-button {
@@ -121,6 +121,7 @@ header {
   align-items: center;
   grid-column: 2;
   grid-row: 1;
+  cursor: pointer;
 }
 
 i.fas.fa-bars {
@@ -142,7 +143,6 @@ i.fas.fa-bars {
 
 .navbar .brand-name a:hover {
   color: var(--third-color);
-  
 }
 
 .navbar .navbar-links.active {
@@ -150,7 +150,7 @@ i.fas.fa-bars {
 }
 
 .navbar .navbar-links.active a {
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 /* =================================== */
@@ -197,7 +197,7 @@ i.fas.fa-bars {
   font-style: italic;
 }
 
-.welcome-text .button{
+.welcome-text .button {
   border: 0.1rem var(--second-color) solid;
 }
 .welcome-text .button:hover {
@@ -205,7 +205,7 @@ i.fas.fa-bars {
 }
 
 .welcome-text div .button {
-  padding: 2vh 4vw;
+  padding: 1rem;
   font-size: 5vmin;
   border-radius: 0;
   color: var(--main-color);
@@ -229,50 +229,48 @@ i.fas.fa-bars {
 /* ===================================== */
 /* ============ GALLERY SECTION ============ */
 
-
-#gallery .container{
+#gallery .container {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 100%;
-  min-width: 100%;
+  justify-content: start;
+  min-height: 100vh;
+  width: 100%;
 }
 
-#gallery .container h3{
+#gallery .container h3 {
   background-color: var(--fourth-color);
   font-size: 2rem;
   font-weight: 600;
   color: var(--second-color);
-  min-width: 80%;
+  width: 90%;
   text-align: center;
-  margin: 2rem;
-  padding: 2rem;
   border-radius: 3rem;
+  margin-top: 4rem;
+  padding: 1rem 0;
+  padding: ;
 }
 
- .container .gallery-pics{
+#gallery .container .gallery-pics {
   display: grid;
+  width: 100%;
   place-items: center;
   place-content: center;
-  width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  /* grid-auto-rows: minmax(250px, auto); */
-  
+  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
 }
 
-.container .gallery-pics .img-container{
+#gallery .container .gallery-pics .img-container {
   position: relative;
-  margin: 1rem;
+  margin: 0.2rem;
 }
 
-.container .gallery-pics .img-container img{
-width: 100%;
-display: block;
+#gallery .container .gallery-pics .img-container img {
+  width: 100%;
+  display: block;
 }
 
-.container .gallery-pics .img-container .overlay{
+#gallery .container .gallery-pics .img-container .overlay {
   position: absolute;
   left: 0;
   top: 0;
@@ -285,16 +283,15 @@ display: block;
   align-items: center;
   transform: scale(0.88);
   opacity: 0;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
-.container .gallery-pics .img-container:hover .overlay{
+#gallery .container .gallery-pics .img-container:hover .overlay {
   transform: scale(0.9);
   opacity: 1;
-
 }
 
-.container .gallery-pics .img-container .overlay .fas.fa-search-plus{
+#gallery .container .gallery-pics .img-container .overlay .fas.fa-search-plus {
   display: inline-block;
   height: 30px;
   width: 30px;
@@ -306,6 +303,25 @@ display: block;
   background-color: #fff;
   cursor: pointer;
 }
+
+.filter-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+.filter-btn .button {
+  margin: 0.7rem;
+  text-align: center;
+}
+
+.container .filter-btn ul li.filter {
+  background-color: var(--third-color);
+}
+
 /*------------------ lightbox ----------------*/
 .lightbox {
   position: fixed;
@@ -320,96 +336,90 @@ display: block;
   align-items: center;
   cursor: zoom-out;
 }
-.lightbox.open{
+
+.lightbox.open {
   display: flex;
 }
 
-
-.lightbox .lightbox-content{
-  position: relative;
+.lightbox .lightbox-close {
+  position: absolute;
+  z-index: 101;
+  right: 0;
+  height: 20px;
+  width: 20px;
+  top: 0;
+  text-align: center;
+  line-height: 20px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: zoom-out;
 }
 
-.lightbox .lightbox-close{
-position: absolute;
-z-index: 101;
-right: 0;
-height: 20px;
-width: 20px;
-top: 0;
-text-align: center;
-line-height: 20px;
-color: #fff;
-font-size: 1rem;
-cursor: zoom-out;
-
-}
-
-.lightbox .lightbox-img{
+.lightbox .lightbox-img {
   width: auto;
   height: auto;
   max-width: 100%;
   max-height: 530px;
-  padding: 20px 0;
+  padding: 15px 0;
   cursor: pointer;
-  animation: lightboxImg .5s ease;
+  animation: lightboxImg 0.5s ease;
 }
 
-@keyframes lightboxImg{
-  0%{
-    transform:scale(0)
+@keyframes lightboxImg {
+  0% {
+    transform: scale(0);
   }
-  100%{
+  100% {
     transform: scale(1);
   }
 }
 
-.lightbox .lightbox-caption{
+.lightbox .lightbox-caption {
   color: #fff;
-  font-size: 1.2rem;
   position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
-  
 }
-.lightbox .lightbox-controls div{
+.lightbox .lightbox-controls div {
   position: absolute;
-  top:50%;
+  top: 50%;
   width: 35px;
-  line-height:40px ;
+  line-height: 40px;
   margin-top: -30px;
   background-color: #ccc;
+  color: #000;
   border-radius: 50%;
   text-align: center;
   font-size: 25px;
   font-weight: 800;
   cursor: pointer;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
-.lightbox .lightbox-controls div:hover{
+.lightbox .lightbox-controls div:hover {
   background-color: #fff;
 }
-.lightbox .lightbox-controls div.prev{
+.lightbox .lightbox-controls div.prev {
   left: 20px;
 }
 
-.lightbox .lightbox-controls div.next{
+.lightbox .lightbox-controls div.next {
   right: 20px;
 }
 
-#lightBox.active{
+#lightBox.active {
   display: flex;
   justify-content: center;
   align-items: center;
   animation: lightboxImage 0.5s ease;
 }
 
-@keyframes lightboxImage{
-  0%{
-    transform: scale: (0);
+@keyframes lightboxImage {
+  0% {
+    transform: scale(0);
   }
-  100%{
-    transform: scale: (1);
+  100% {
+    transform: scale(1);
   }
 }
 .lightbox .lightbox-content {
@@ -417,7 +427,6 @@ cursor: zoom-out;
   margin: 0 0.5rem;
 }
 /*------------------- end of lightbox-------------------------- */
-
 
 /* ================ Footer =============== */
 .footer {
@@ -427,8 +436,7 @@ cursor: zoom-out;
   justify-content: space-evenly;
   align-content: center;
   padding: 1rem;
-  border-top: .1rem var(--third-color) solid;
-
+  border-top: 0.1rem var(--third-color) solid;
 }
 /* ======================================= */
 
@@ -447,8 +455,13 @@ cursor: zoom-out;
   }
 
   .welcome-text div .button {
-    padding: 2vh 3vw;
+    padding: 1rem 1.5rem;
     font-size: 2vw;
+  }
+  /* ================== Gallery ============== */
+  #gallery .container .gallery-pics {
+    width: 75%;
+    grid-template-columns: repeat(auto-fit, minmax(33.3%, 1fr));
   }
 }
 
@@ -460,8 +473,6 @@ cursor: zoom-out;
   /* ============= Navbar ============== */
 
   .navbar {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
     padding: 12px;
   }
 
@@ -479,10 +490,10 @@ cursor: zoom-out;
   .navbar div#toggle-button {
     display: none;
   }
-  
+
   .navbar .navbar-links.active a {
-  padding: 0;
-}
+    padding: 0;
+  }
 
   /* =================================== */
   /* Welcome section */

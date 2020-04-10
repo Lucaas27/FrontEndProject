@@ -23,7 +23,7 @@ navBarContainer.addEventListener("click", event => {
 
 // -----------------------------------------------------------
 
-// ------------------Lightbox---------------
+// ------------------LIGHTBOX ---------------------------------
 const lightBoxContainer = document.querySelector(".lightbox");
 const lightboxImage = document.querySelector(".lightbox-img");
 const galleryPics = document.querySelectorAll(".img-container");
@@ -95,3 +95,28 @@ lightBoxContainer.addEventListener("click", event => {
     lightBox();
   }
 });
+
+// ------------------GALLERY FILTER---------------------------------
+const buttons = document.querySelector(".filter-btn").children;
+const pics = document.querySelectorAll(".img-container");
+
+for (let i = 0; i < buttons.length; i++) {
+  buttons[i].addEventListener("click", function() {
+    for (let n = 0; n < buttons.length; n++) {
+      buttons[n].classList.remove("filter");
+    }
+    this.classList.add("filter");
+    const target = this.getAttribute("data-target");
+
+    for (let m = 0; m < pics.length; m++) {
+      pics[m].style.display = "none";
+
+      if (pics[m].getAttribute("data-id") == target) {
+        pics[m].style.display = "block";
+      }
+      if (target == "all") {
+        pics[m].style.display = "block";
+      }
+    }
+  });
+}

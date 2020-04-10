@@ -52,94 +52,149 @@
         <section id="gallery">
           <div class="container">
             <h3>Gallery</h3>
+            <div class="filter-btn">
+              <div class="button filter" data-target="all">
+                All
+              </div>
 
+              <div class="button" data-target="landscape">
+                Landscape
+              </div>
+
+              <div class="button" data-target="street">
+                Street
+              </div>
+
+              <div class="button" data-target="recentEvents">
+                Recent Events
+              </div>
+
+              <div class="button" data-target="portrait">
+                Portrait
+              </div>
+            </div>
             <div class="gallery-pics">
-              <div class="img-container">
+              <div class="img-container" data-id="portrait">
                 <img src="img/gallery/img1.jpg" alt="" />
                 <div class="overlay">
                   <i class="fas fa-search-plus"></i>
                 </div>
               </div>
 
-              <div class="img-container">
+              <div class="img-container " data-id="portrait">
                 <img src="img/gallery/img2.jpg" alt="" />
                 <div class="overlay">
                   <i class="fas fa-search-plus"></i>
                 </div>
               </div>
 
-              <div class="img-container">
+              <div class="img-container" data-id="portrait">
                 <img src="img/gallery/img3.jpg" alt="" />
                 <div class="overlay">
                   <i class="fas fa-search-plus"></i>
                 </div>
               </div>
 
-              <div class="img-container">
+              <div class="img-container" data-id="portrait">
                 <img src="img/gallery/img4.jpg" alt="" />
                 <div class="overlay">
                   <i class="fas fa-search-plus"></i>
                 </div>
               </div>
 
-              <div class="img-container">
+              <div class="img-container" data-id="portrait">
                 <img src="img/gallery/img5.jpg" alt="" />
                 <div class="overlay">
                   <i class="fas fa-search-plus"></i>
                 </div>
               </div>
 
-              <div class="img-container">
+              <div class="img-container " data-id="portrait">
                 <img src="img/gallery/img6.jpg" alt="" />
                 <div class="overlay">
                   <i class="fas fa-search-plus"></i>
                 </div>
               </div>
 
-              <div class="img-container">
+              <div class="img-container" data-id="portrait">
                 <img src="img/gallery/img7.jpg" alt="" />
                 <div class="overlay">
                   <i class="fas fa-search-plus"></i>
                 </div>
               </div>
 
-              <div class="img-container">
+              <div class="img-container" data-id="recentEvents">
                 <img src="img/gallery/img8.jpg" alt="" />
                 <div class="overlay">
                   <i class="fas fa-search-plus"></i>
                 </div>
               </div>
 
-              <div class="img-container">
+              <div class="img-container " data-id="portrait">
                 <img src="img/gallery/img9.jpg" alt="" />
                 <div class="overlay">
                   <i class="fas fa-search-plus"></i>
                 </div>
               </div>
 
-              <div class="img-container">
+              <div class="img-container" data-id="landscape">
                 <img src="img/gallery/img10.jpg" alt="" />
                 <div class="overlay">
                   <i class="fas fa-search-plus"></i>
                 </div>
               </div>
 
-              <div class="img-container">
+              <div class="img-container" data-id="portrait">
                 <img src="img/gallery/img11.jpg" alt="" />
                 <div class="overlay">
                   <i class="fas fa-search-plus"></i>
                 </div>
               </div>
 
-              <div class="img-container">
+              <div class="img-container" data-id="street">
                 <img src="img/gallery/img12.jpg" alt="" />
                 <div class="overlay">
                   <i class="fas fa-search-plus"></i>
                 </div>
               </div>
 
-              <div class="img-container">
+              <div class="img-container" data-id="street">
                 <img src="img/gallery/img13.jpg" alt="" />
+                <div class="overlay">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              </div>
+
+              <div class="img-container" data-id="recentEvents">
+                <img src="img/gallery/img14.jpg" alt="" />
+                <div class="overlay">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              </div>
+
+              <div class="img-container" data-id="recentEvents">
+                <img src="img/gallery/img15.jpg" alt="" />
+                <div class="overlay">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              </div>
+
+              <div class="img-container" data-id="street">
+                <img src="img/gallery/img16.jpg" alt="" />
+                <div class="overlay">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              </div>
+
+              <div class="img-container" data-id="landscape">
+                <img src="img/gallery/img17.jpg" alt="" />
+                <div class="overlay">
+                  <i class="fas fa-search-plus"></i>
+                </div>
+              </div>
+
+              <div class="img-container" data-id="landscape">
+                <img src="img/gallery/img18.jpg" alt="" />
                 <div class="overlay">
                   <i class="fas fa-search-plus"></i>
                 </div>
@@ -153,14 +208,14 @@
           <div class="lightbox">
             <div class="lightbox-content">
               <div class="lightbox-close">&times;</div>
-              <img src="" class="lightbox-img" alt="" onclick="next()" />
+              <img src="#" class="lightbox-img" alt="" onclick="next()" />
               <div class="lightbox-caption">
                 <span class="lightbox-counter"> </span>
               </div>
             </div>
             <div class="lightbox-controls">
-              <div class="prev"><</div>
-              <div class="next">></div>
+              <div class="prev">&lt;</div>
+              <div class="next">&gt;</div>
             </div>
           </div>
           <!-- end of lightboxeffect -->
