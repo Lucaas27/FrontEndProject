@@ -14,7 +14,7 @@ toggleButton.addEventListener("click", () => {
 });
 
 // Closes menu if the menu or navlinks are clicled
-navBarContainer.addEventListener("click", event => {
+navBarContainer.addEventListener("click", (event) => {
   //   console.log(event.target);
   if (event.target !== navbarLinks && event.target !== toggleButton) {
     menu();
@@ -84,7 +84,7 @@ backwards.addEventListener(
   })
 );
 
-lightBoxContainer.addEventListener("click", event => {
+lightBoxContainer.addEventListener("click", (event) => {
   //   console.log(event.target);
   if (
     event.target !== lightboxImage &&
@@ -101,7 +101,7 @@ const buttons = document.querySelector(".filter-btn").children;
 const pics = document.querySelectorAll(".img-container");
 
 for (let i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener("click", function() {
+  buttons[i].addEventListener("click", function () {
     for (let n = 0; n < buttons.length; n++) {
       buttons[n].classList.remove("filter");
     }
