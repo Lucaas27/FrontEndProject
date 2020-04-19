@@ -1,10 +1,11 @@
+"use strict";
+
 // ------------------ Responsive Nav Bar -------------------------
 const navbarLinks = document.querySelector(".navbar .navbar-links");
 const toggleButton = document.querySelector(".fas.fa-bars");
 const navBarContainer = document.querySelector(".navbar");
-
 // Open and closes menu nav
-menu = () => {
+const menu = () => {
   navbarLinks.classList.toggle("active");
 };
 
@@ -20,7 +21,6 @@ navBarContainer.addEventListener("click", (event) => {
     menu();
   }
 });
-
 // -----------------------------------------------------------
 
 // ------------------LIGHTBOX ---------------------------------
@@ -34,8 +34,8 @@ let index;
 let imgSrc;
 
 /* for loop iterates over img containers and retieves the icon from each
-and listens for a click and returns the index number
-*/
+  and listens for a click and returns the index number
+  */
 for (let i = 0; i < galleryPics.length; i++) {
   galleryPics[i]
     .querySelector(".fas.fa-search-plus")
@@ -47,42 +47,36 @@ for (let i = 0; i < galleryPics.length; i++) {
 }
 
 // Function adds a classe called open to the lighbox container
-lightBox = () => {
+const lightBox = () => {
   lightBoxContainer.classList.toggle("open");
 };
 
 // function uses the index to retrieve the img src attribute
-changeImage = () => {
+const changeImage = () => {
   imgSrc = galleryPics[index].querySelector("img").getAttribute("src");
   lightboxImage.src = imgSrc;
   counter.innerHTML = `${index + 1} of ${galleryPics.length}`;
 };
 
 // Function listen for clicks on the next button and changes pictures depending on the index
-forward.addEventListener(
-  "click",
-  (next = () => {
-    if (index == galleryPics.length - 1) {
-      index = 0;
-    } else {
-      index++;
-    }
-    changeImage();
-  })
-);
+forward.addEventListener("click", () => {
+  if (index == galleryPics.length - 1) {
+    index = 0;
+  } else {
+    index++;
+  }
+  changeImage();
+});
 
 // Function listen for clicks on the prev button and changes pictures depending on the index
-backwards.addEventListener(
-  "click",
-  (prev = () => {
-    if (index == 0) {
-      index = galleryPics.length - 1;
-    } else {
-      index--;
-    }
-    changeImage();
-  })
-);
+backwards.addEventListener("click", () => {
+  if (index == 0) {
+    index = galleryPics.length - 1;
+  } else {
+    index--;
+  }
+  changeImage();
+});
 
 lightBoxContainer.addEventListener("click", (event) => {
   //   console.log(event.target);
@@ -98,7 +92,6 @@ lightBoxContainer.addEventListener("click", (event) => {
 
 // ------------------GALLERY FILTER---------------------------------
 const buttons = document.querySelector(".filter-btn").children;
-const pics = document.querySelectorAll(".img-container");
 
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function () {
@@ -108,16 +101,16 @@ for (let i = 0; i < buttons.length; i++) {
     this.classList.add("filter");
     const target = this.getAttribute("data-target");
 
-    for (let m = 0; m < pics.length; m++) {
-      pics[m].style.display = "none";
+    for (let m = 0; m < galleryPics.length; m++) {
+      galleryPics[m].style.display = "none";
 
-      if (pics[m].getAttribute("data-id") == target) {
-        pics[m].style.display = "block";
-        pics[m].style.transform = "scale(0.8)";
+      if (galleryPics[m].getAttribute("data-id") == target) {
+        galleryPics[m].style.display = "block";
+        galleryPics[m].style.transform = "scale(0.8)";
       }
       if (target == "all") {
-        pics[m].style.display = "block";
-        pics[m].style.transform = "scale(1)";
+        galleryPics[m].style.display = "block";
+        galleryPics[m].style.transform = "scale(1)";
       }
     }
   });

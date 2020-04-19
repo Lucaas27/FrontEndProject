@@ -44,6 +44,27 @@ a {
   color: var(--main-color);
 }
 
+.banner {
+  padding: 5rem;
+  text-align: center;
+  background: var(--main-color);
+  color: var(--second-color);
+  font-weight: 700;
+  font-size: 2.3rem;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  min-height: 100vh;
+  width: 100%;
+}
+
 .button {
   background: none;
   border: 0.1rem solid var(--second-color);
@@ -65,12 +86,14 @@ a {
 input,
 textarea {
   background: rgba(213, 108, 44, 0.5);
-  padding: 10px 16px;
+  padding: 1% 5%;
+  margin: 0.3rem 0;
   border-radius: 20px;
-  border: 0.2rem var(--second-color) solid;
-  color: #f2f2f2;
 }
-
+input,
+textarea:focus {
+  outline: none;
+}
 /* ===================================== */
 
 /*=========== Website flex layout ====== */
@@ -228,29 +251,6 @@ i.fas.fa-bars {
 }
 /* ===================================== */
 /* ============ GALLERY SECTION ============ */
-
-#gallery .container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
-  min-height: 100vh;
-  width: 100%;
-}
-
-#gallery .container h3 {
-  background-color: var(--fourth-color);
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--second-color);
-  width: 90%;
-  text-align: center;
-  border-radius: 3rem;
-  margin-top: 4rem;
-  padding: 1rem 0;
-  padding: ;
-}
 
 #gallery .container .gallery-pics {
   display: grid;
@@ -422,6 +422,26 @@ i.fas.fa-bars {
   margin: 0 0.5rem;
 }
 /*------------------- end of lightbox-------------------------- */
+
+/* ============================= CONTACT SECTION =============== */
+
+.contact-form {
+  margin: 2rem 0 0 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: start;
+}
+
+.info {
+  margin-top: 2rem;
+  font-weight: 600;
+  align-self: center;
+  text-align: center;
+}
+
+/* ============================================================ */
 
 /* ================ Footer =============== */
 .footer {
