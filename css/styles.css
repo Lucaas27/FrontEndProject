@@ -69,7 +69,7 @@ a {
   background: none;
   border: 0.1rem solid var(--second-color);
   color: var(--main-color);
-  padding: 0.3rem 0.6rem;
+  padding: 0.4rem 0.7rem;
   border-radius: 1em;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.6);
   display: inline-block;
@@ -86,7 +86,7 @@ a {
 input,
 textarea {
   background: rgba(213, 108, 44, 0.5);
-  padding: 1% 5%;
+  padding: 0.4rem 0.7rem;
   margin: 0.3rem 0;
   border-radius: 20px;
 }
@@ -439,6 +439,16 @@ i.fas.fa-bars {
   font-weight: 600;
   align-self: center;
   text-align: center;
+}
+
+.error {
+  align-self: center;
+  color: #ff0000e0;
+}
+
+.success {
+  align-self: center;
+  color: #008000;
 }
 
 /* ============================================================ */

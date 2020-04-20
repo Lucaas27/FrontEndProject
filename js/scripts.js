@@ -10,11 +10,9 @@ const menu = () => {
 };
 
 // listens fot clicks on the hamburguer menu and calls the menu function
-toggleButton.addEventListener("click", () => {
-  menu();
-});
+toggleButton.addEventListener("click", menu);
 
-// Closes menu if the menu or navlinks are clicled
+// Closes menu if the menu or navlinks are clicked
 navBarContainer.addEventListener("click", (event) => {
   //   console.log(event.target);
   if (event.target !== navbarLinks && event.target !== toggleButton) {
@@ -79,7 +77,7 @@ backwards.addEventListener("click", () => {
 });
 
 lightBoxContainer.addEventListener("click", (event) => {
-  //   console.log(event.target);
+  // console.log(event.target);
   if (
     event.target !== lightboxImage &&
     event.target !== forward &&
@@ -94,12 +92,12 @@ lightBoxContainer.addEventListener("click", (event) => {
 const buttons = document.querySelector(".filter-btn").children;
 
 for (let i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener("click", function () {
+  buttons[i].addEventListener("click", () => {
     for (let n = 0; n < buttons.length; n++) {
       buttons[n].classList.remove("filter");
     }
-    this.classList.add("filter");
-    const target = this.getAttribute("data-target");
+    buttons[i].classList.add("filter");
+    const target = buttons[i].getAttribute("data-target");
 
     for (let m = 0; m < galleryPics.length; m++) {
       galleryPics[m].style.display = "none";
@@ -115,3 +113,31 @@ for (let i = 0; i < buttons.length; i++) {
     }
   });
 }
+
+// --------------- FORM  -------------------------------
+
+// Validation
+const htmlAlert = document.querySelector(".html-alert");
+const contactForm = document.querySelector(".contact-form");
+let personName = document.querySelector("#name");
+let personMsg = document.querySelector("#msg");
+let personEmail = document.querySelector("#email");
+
+const onSubmit = (event) => {
+  event.preventDefault();
+  if (personName.value === "" || personMsg.value === "" || personEmail === "") {
+    htmlAlert.classList.add("error");
+    htmlAlert.innerHTML = "Please enter all fields!";
+    setTimeout(() => htmlAlert.remove(), 4000);
+  } else {
+    htmlAlert.classList.add("success");
+    htmlAlert.innerHTML =
+      "Thank you. We will get back to you as soon as possible!";
+    // Clear fields
+    personName.value = "";
+    personMsg.value = "";
+    personEmail.value = "";
+  }
+};
+
+contactForm.addEventListener("submit", onSubmit);
