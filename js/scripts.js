@@ -114,30 +114,37 @@ for (let i = 0; i < buttons.length; i++) {
   });
 }
 
-// --------------- FORM  -------------------------------
+// --------------- CONTACT FORM  -------------------------------
 
 // Validation
 const htmlAlert = document.querySelector(".html-alert");
 const contactForm = document.querySelector(".contact-form");
+const contactButton = document.getElementById("#contact-button");
 let personName = document.querySelector("#name");
 let personMsg = document.querySelector("#msg");
 let personEmail = document.querySelector("#email");
 
 const onSubmit = (event) => {
   event.preventDefault();
-  if (personName.value === "" || personMsg.value === "" || personEmail === "") {
+  if (
+    personName.value === "" ||
+    personMsg.value === "" ||
+    personEmail.value === ""
+  ) {
     htmlAlert.classList.add("error");
     htmlAlert.innerHTML = "Please enter all fields!";
-    setTimeout(() => htmlAlert.remove(), 4000);
+    setTimeout(() => htmlAlert.remove(), 5000);
   } else {
+    // Add the person's name to the localStorage and displays it on the message
+    localStorage.setItem(personName.id, personName.value);
+    const nameValue = localStorage.getItem(personName.id);
     htmlAlert.classList.add("success");
-    htmlAlert.innerHTML =
-      "Thank you. We will get back to you as soon as possible!";
+    htmlAlert.innerHTML = `Thank you ${nameValue}. We will get back to you as soon as possible!`;
+
     // Clear fields
     personName.value = "";
     personMsg.value = "";
     personEmail.value = "";
   }
 };
-
 contactForm.addEventListener("submit", onSubmit);
