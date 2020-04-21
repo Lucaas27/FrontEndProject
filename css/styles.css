@@ -83,6 +83,10 @@ a {
   border: 0.1rem var(--main-color) solid;
 }
 
+.button:active {
+  transform: scale(0.98);
+}
+
 input,
 textarea {
   background: rgba(213, 108, 44, 0.5);

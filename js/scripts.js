@@ -116,10 +116,9 @@ for (let i = 0; i < buttons.length; i++) {
 
 // --------------- CONTACT FORM  -------------------------------
 
-// Validation
+// Validation and localStorage
 const htmlAlert = document.querySelector(".html-alert");
 const contactForm = document.querySelector(".contact-form");
-const contactButton = document.getElementById("#contact-button");
 let personName = document.querySelector("#name");
 let personMsg = document.querySelector("#msg");
 let personEmail = document.querySelector("#email");
