@@ -147,3 +147,11 @@ const onSubmit = (event) => {
   }
 };
 contactForm.addEventListener("submit", onSubmit);
+
+// ----------------BING STATIC MAP API
+const myMap = document.getElementById("my-map");
+
+window.addEventListener("DOMContentLoaded", () => {
+  myMap.src =
+    "https://dev.virtualearth.net/REST/v1/Imagery/Map/Road?mapArea=52.627572,-1.14815,52.634713,-1.127962&mapMetadata=0&pp=52.629730,-1.139040;113&mapSize=450,450&zoomLevel=15&key=An62BPF7rFTlcP_cKXU1LOpYHn8GZjA97Sly36le6e8-auFmmaYU9cyIIASs4M8G";
+});

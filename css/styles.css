@@ -92,8 +92,13 @@ textarea {
   background: rgba(213, 108, 44, 0.5);
   padding: 0.4rem 0.7rem;
   margin: 0.3rem 0;
+  width: 100%;
   border-radius: 20px;
 }
+input {
+  width: 50%;
+}
+
 input,
 textarea:focus {
   outline: none;
@@ -430,19 +435,43 @@ i.fas.fa-bars {
 /* ============================= CONTACT SECTION =============== */
 
 .contact-form {
-  margin: 2rem 0 0 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 90%;
+  border: 0.1rem var(--third-color) solid;
+  border-radius: 20px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-container {
+  padding: 1rem 0;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: flex-start;
-  align-self: start;
+  width: 50%;
+}
+
+#contact-button {
+  width: fit-content;
+  text-align: center;
+}
+
+.form-container label {
+  display: block;
+  margin-top: 0.3rem;
+  align-self: flex-start;
 }
 
 .info {
   margin-top: 2rem;
   font-weight: 600;
-  align-self: center;
   text-align: center;
+  margin-bottom: 0.5rem;
 }
 
 .error {
@@ -453,6 +482,17 @@ i.fas.fa-bars {
 .success {
   align-self: center;
   color: #008000;
+}
+
+.map-container {
+  padding: 1rem;
+  max-width: 50%;
+  align-self: flex-start;
+}
+
+#my-map {
+  width: 100%;
+  height: 100%;
 }
 
 /* ============================================================ */
@@ -487,8 +527,12 @@ i.fas.fa-bars {
     padding: 1rem 1.5rem;
     font-size: 2vw;
   }
-}
+  /* ============================= CONTACT SECTION =============== */
 
+  .contact-form {
+    width: 70%;
+  }
+}
 /* ------------ DESKTOP STYLES ------------- */
 
 @media screen and (min-width: 1000px) {
