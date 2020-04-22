@@ -4,6 +4,10 @@ This assignment consists of a single page web application designed for an imagin
 
 # Notes
 
+#### Testing
+
+- I used Google Chrome and Firefox to test the website in different views.
+
 #### Pictures
 
 - Every picture used in this project were taken from the stock photography website [unsplah](https://unsplash.com/).
