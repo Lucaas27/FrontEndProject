@@ -1,75 +1,27 @@
 # CTEC3905 Assignment
 
-This is very basic boilerplate code for you to get started with.
+This assignment consists of a single page web application designed for an imaginary photography studio in order to show their work.
 
-## index.html
+# Notes
 
-The `index.html` file includes a basic template with a link to the `css/styles.css` file and a script tag after the main content which links to the `js/scripts.js` file.
+#### Pictures
 
-```
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>P-Number</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  
-  <h1>Hello World</h1>
+- Every picture used in this project were taken from the stock photography website [unsplah](https://unsplash.com/).
 
-  <script src="js/scripts.js"></script>
-</body>
-</html>
-```
+#### API
 
-## css/styles.css
+- Bing Imagery API was used in order to create a static map with a marker location.
 
-The `css/styles.css` file contains a basic starting template for a responsive page.
+#### CSS
 
-```
-/* MOBILE AND GLOBAL STYLES */
+- Initially I was not being able to validate the CSS as most validators throw a `Parse Error` due to the use of the CSS3 variable feature. More on this topic can be found on [this](https://stackoverflow.com/questions/57661659/w3c-css-validation-parse-error-on-variables) stackoverflow thread. However, I was able to find [this](https://validator.w3.org/nu/) validator which I used instead.
 
-/* applies to screens smaller than 500px (first breakpoint) */
-/* and above unless overwritten below */
+# References
 
-body {
-  background: #fcc;
-} 
-
-
-
-/* TABLET STYLES */
-
-@media screen and (min-width: 500px) {
-
-  /* applies to screens wider than 499px */
-  
-  body {
-    background: #cfc;
-  } 
-}
-
-
-
-/* DESKTOP STYLES */
-
-@media screen and (min-width: 1000px) {
-
-  /* applies to screens wider than 999px */
-
-  body {
-    background: #ccf;
-  } 
-}
-
-```
-
-## js/scripts.js
-
-The `js/scripts.js` file contains a simple console.log statement to confirm that it is being executed.
-
-```
-console.log("hello");
-```
+- The navbar was adapted from this [video](https://www.youtube.com/watch?v=gXkqy0b4M5g) and [this one](https://www.youtube.com/watch?v=At4B7A4GOPg&t=74s)
+- The layout for the project was adapted from [here](https://css-tricks.com/couple-takes-sticky-footer/)
+- The gallery section was inspired from this video[here](https://www.youtube.com/watch?v=dQHtT47eH0M)
+- The Bing Imagery API was implemented by myself using the API documentation from [here](https://docs.microsoft.com/en-us/bingmaps/rest-services/imagery/)
+- The localStorage was implemented after watching this [video](https://www.youtube.com/watch?v=KVFtyRWGjgU&t=63s)
+- The automatic slider was implemented with the help of this [video](https://www.youtube.com/watch?v=WyLPtIxnE9E)
+-
