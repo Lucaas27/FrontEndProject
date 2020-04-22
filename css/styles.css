@@ -12,7 +12,7 @@
   --main-color: #fff;
   --second-color: #22223a;
   --third-color: #d56c2c;
-  --fourth-color: #ccc;
+  --fourth-color: #29414d7e;
 }
 /* ===================================== */
 
@@ -47,12 +47,13 @@ a {
 .banner {
   padding: 5rem;
   text-align: center;
-  background: var(--main-color);
-  color: var(--second-color);
+  background: var(--fourth-color);
+  color: var(--main-color);
   font-weight: 700;
   font-size: 2.3rem;
   width: 100%;
-  margin-top: 1rem;
+  border-top: 0.1rem var(--main-color) solid;
+  border-bottom: 0.1rem var(--main-color) solid;
 }
 
 .container {
@@ -89,7 +90,7 @@ a {
 
 input,
 textarea {
-  background: rgba(213, 108, 44, 0.5);
+  background: rgba(255, 255, 255, 0.849);
   padding: 0.4rem 0.7rem;
   margin: 0.3rem 0;
   width: 100%;
@@ -267,6 +268,8 @@ i.fas.fa-bars {
   place-items: center;
   place-content: center;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  background-color: var(--fourth-color);
+  margin-bottom: 1.5rem;
 }
 
 #gallery .container .gallery-pics .img-container {
@@ -441,11 +444,10 @@ i.fas.fa-bars {
   justify-content: space-evenly;
   align-items: center;
   width: 90%;
-  border: 0.1rem var(--third-color) solid;
   border-radius: 20px;
   padding: 1rem;
-  margin-bottom: 1rem;
-  background-color: #29414d7e;
+  margin-bottom: 1.5rem;
+  background-color: var(--fourth-color);
 }
 
 .form-container {
@@ -498,9 +500,47 @@ i.fas.fa-bars {
 
 /* ============================================================ */
 
+/* ============================= ABOUT SECTION =============== */
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  width: 80%;
+  margin: 1.5rem;
+}
+.content .info {
+  margin: 1rem;
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+}
+.content .info p.description {
+  margin-top: 1rem;
+}
+.content a {
+  align-self: start;
+  grid-column: 1;
+  grid-row: 2;
+  margin: 1rem;
+}
+
+.about-image {
+  max-width: 70%;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: start;
+}
+
+.about-image img {
+  width: 100%;
+}
+/* ============================================================ */
+
 /* ================ Footer =============== */
 .footer {
-  background: var(--second-color);
+  background: var(--fourth-color);
   color: var(--main-color);
   display: flex;
   justify-content: space-evenly;
@@ -533,7 +573,9 @@ i.fas.fa-bars {
   .contact-form {
     width: 70%;
   }
+  /* ============================================================= */
 }
+
 /* ------------ DESKTOP STYLES ------------- */
 
 @media screen and (min-width: 1000px) {
