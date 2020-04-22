@@ -24,4 +24,3 @@ This assignment consists of a single page web application designed for an imagin
 - The Bing Imagery API was implemented by myself using the API documentation from [here](https://docs.microsoft.com/en-us/bingmaps/rest-services/imagery/)
 - The localStorage was implemented after watching this [video](https://www.youtube.com/watch?v=KVFtyRWGjgU&t=63s)
 - The automatic slider was implemented with the help of this [video](https://www.youtube.com/watch?v=WyLPtIxnE9E)
--
