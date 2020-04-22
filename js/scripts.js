@@ -122,6 +122,7 @@ const contactForm = document.querySelector(".contact-form");
 let personName = document.querySelector("#name");
 let personMsg = document.querySelector("#msg");
 let personEmail = document.querySelector("#email");
+const contactBtn = document.getElementById("contact-button");
 
 const onSubmit = (event) => {
   event.preventDefault();
@@ -132,18 +133,18 @@ const onSubmit = (event) => {
   ) {
     htmlAlert.classList.add("error");
     htmlAlert.innerHTML = "Please enter all fields!";
-    setTimeout(() => htmlAlert.remove(), 5000);
   } else {
     // Add the person's name to the localStorage and displays it on the message
     localStorage.setItem(personName.id, personName.value);
     const nameValue = localStorage.getItem(personName.id);
-    htmlAlert.classList.add("success");
     htmlAlert.innerHTML = `Thank you ${nameValue}. We will get back to you as soon as possible!`;
+    htmlAlert.classList.add("success");
 
     // Clear fields
     personName.value = "";
     personMsg.value = "";
     personEmail.value = "";
+    setTimeout(() => htmlAlert.remove(), 4000);
   }
 };
 contactForm.addEventListener("submit", onSubmit);
