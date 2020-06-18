@@ -1,6 +1,8 @@
 # CTEC3905 Assignment
 
 This assignment consists of a single page web application designed for an imaginary photography studio in order to show their work.
+# Live view
+https://lucaas27.github.io/FrontEndProject/
 
 # Notes
 
